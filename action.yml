@@ -1,0 +1,24 @@
+name: 'gh-pages'
+author: 'LEE Juchan <juchan.lee@navercorp.com>'
+description: 'Action for gh-pages'
+inputs:
+  github-token:
+    description: 'GITHUB_TOKEN'
+    required: true
+  dir:
+    description: 'Directory to publish'
+    default: 'dist'
+    required: true
+  branch:
+    description: 'Destination branch'
+    default: 'gh-pages'
+  dest:
+    description: 'Directory within the destination branch'
+    default: '.'
+  message:
+    description: 'Commit message'
+    default: 'Publish gh-pages'
+    
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
